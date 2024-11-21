@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async function () {
-	let form = document.getElementById('dz_login_signup_form');
+	const form = document.getElementById('dz_login_signup_form');
 	const data = {
 		"username": form.elements['val-username'].value,
 		"email": form.elements['val-email'].value,
@@ -20,12 +20,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 			if(response.status === 200) {
 				const responseData = await response.json();
 				localStorage.setItem('token', responseData['token']);
-				// window.location.href = 'index.html';
+				window.location.href = 'index.html';
 			}
 		} catch (error) {
 			console.log(error);
 		}
-		
-		
 	});
 }, false);
